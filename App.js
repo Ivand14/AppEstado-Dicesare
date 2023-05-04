@@ -1,141 +1,51 @@
-import { Button, FlatList, ImageBackground, Modal, StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
 
-import ModalComponent from './src/components/ModaComponent'
+import IniciarSesion from './src/Screens/IniciarSesion'
+import Login from './src/Screens/Login'
+import Registrarse from './src/Screens/Registrarse'
+import { StyleSheet } from 'react-native'
+import { View } from 'react-native-animatable'
+import { useFonts } from 'expo-font'
+
+//npx expo install expo-font
+
 
 const App = () => {
 
-  const [textInput,setTetxtInput]=useState('')
-  const [list,setList]=useState([])
-  const [modalVisible,setModalVisible]=useState(false);
-  const [newItem,setNewItem]=useState({})
+    const [userValidationLogIn,setUserValidationSingIn]=useState(false)
 
-  const onHandleChangeText=text=>{
-    setTetxtInput(text)
-  }
+    const [fonstLoaded]=useFonts({
+        Primario:require('./src/assets/fonts/SpaceGrotesk-Primario/SpaceGrotesk-Medium.ttf'),
+        Secundario:require('./src/assets/fonts/SpaceMon-Secundario/SpaceMono-Regular.ttf'),
+    })
 
-  const Add=()=>{
-    setList(prevState=>[...prevState,{name: textInput, id: Math.random().toString()}])
-    setTetxtInput('')
-  }
+    if(!fonstLoaded){
+        return null;
+    }
 
-  const onHandleModal=item=>{
-    setNewItem(item)
-    setModalVisible(true)
-  }
+    const onHandleValidationSingIn = user => {
+        setUserValidationSingIn(user)}
 
-  const deleteItem=item=>{
-    setList(listElements=>listElements.filter(element=> element.name !=  item.name))
-    setModalVisible(false)
-  }
-
-  const renderItem=({item})=>(
-
-    <View  style={styles.containerItems}>
-      <View style={styles.Items} key={item.id}>  
-        <Text>{item.name}</Text>
-        <Button
-          title='Delete'
-          onPress={()=>onHandleModal(item)}
-        />
-      </View>
-    </View>
+    let contentSingIn= <Login validation={onHandleValidationSingIn}/>
 
 
-  )
+    if (userValidationLogIn) {
+        contentSingIn=<Registrarse/>
+    }
 
     
-  return (
-      <ImageBackground source={require('./src/assets/eberhard-grossgasteiger-S-2Ukb_VqpA-unsplash.jpg')}  style={styles.image}>
-    <View style={styles.container}>
-          <View style={styles.containerInput}>
-            <TextInput
-                  placeholder="Write..."
-                  onChangeText={onHandleChangeText}
-                  value={textInput}
-                  style={styles.containerTextInput}
-                />
-                <Button
-                  onPress={Add}
-                  title='Add'
-                  style={styles.Button}
-                />
-          </View>
-          <View style={styles.containerItems}>
-              <FlatList
-
-                data={list}
-                renderItem={renderItem}
-                keyExtractor={item=>item.id}
-                  
-              />
-          </View>
-
-          <ModalComponent
-            isVisible={modalVisible}
-            deleteItem={()=>deleteItem(newItem)}	
-            newItem={newItem}
-          />
-      
-    </View>
-      </ImageBackground>
-  )
+    return (
+        <View style={styles.container}>
+            {contentSingIn}
+        </View>
+        
+    )
 }
 
 export default App
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    justifyContent:'center',
-  },
-
-  image:{
-    flex:1,
-    justifyContent:'center',
-  },
-
-  containerInput:{
-    flex:1,
-    alignItems:'center',
-    flexDirection:'row',
-    gap:5,
-    backgroundColor:'rgba(239, 246, 224,0.3)',
-    justifyContent:'center',
-    padding:20
-  },
-
-  containerTextInput:{
-    width:150,
-    borderBottomColor:'#000',
-    borderBottomWidth:1
-  },
-
-
-  containerItems:{
-    flex:4,
-    height: 45,
-    flexDirection:'row',
-    justifyContent:'center',
-    margin:10,
-    fontSize:10
-    
-  },
-
-  Items:{
-    flex:1,
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center',
-    marginHorizontal:10,
-    paddingHorizontal:10,
-    paddingVertical:5,
-    padding:1,
-    backgroundColor:'#ffffff',
-    borderRadius:10,
-    shadowColor:'#000',
-    elevation:5,
-    
-  }
+    container:{
+        flex:1,
+    }
 })
-
