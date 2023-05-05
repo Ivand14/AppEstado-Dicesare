@@ -2,28 +2,37 @@ import { StyleSheet } from "react-native";
 import color from "../../constant/color";
 
 const styles = StyleSheet.create({
+
+    Gradient:{
+        flex:1,
+    },
     
     backgroundImage:{
         flex:1,
         justifyContent:'center',
         height:'100%',
         width:'100%',
-        opacity:.75
+    },
+
+    container:{
+        flex:1,
+        justifyContent:'center',
+        height:'100%',
+        width:'100%',
     },
 
     Titulo:{
         fontSize:22,
-        marginHorizontal:10,
-        padding:10,
+        margin:10,
         textAlign:'center',
         color:color.secundaryText,
-        fontFamily:'Secundario',
+        fontFamily:'Primario',
+        fontWeight:700
     },
 
     Boton:{
         textAlign:'center',
-        marginHorizontal:50,
-        fontSize:13,
+        fontSize:16,
         fontFamily:'Secundario'
     },
     
@@ -33,7 +42,7 @@ const styles = StyleSheet.create({
         shadowColor:color.secundary,
         shadowOffset: {width:2,height:1},
         elevation:3,
-        opacity:.989
+        opacity:.76
     },
 
     input:{

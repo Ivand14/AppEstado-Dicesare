@@ -15,8 +15,8 @@ const App = () => {
     const [userValidationLogIn,setUserValidationSingIn]=useState(false)
 
     const [fonstLoaded]=useFonts({
-        Primario:require('./src/assets/fonts/SpaceGrotesk-Primario/SpaceGrotesk-Medium.ttf'),
-        Secundario:require('./src/assets/fonts/SpaceMon-Secundario/SpaceMono-Regular.ttf'),
+        Primario:require('./src/assets/fonts/Primario/SignikaNegative-VariableFont_wght.ttf'),
+        Secundario:require('./src/assets/fonts/Secundario/Ysabeau-VariableFont_wght.ttf'),
     })
 
     if(!fonstLoaded){
