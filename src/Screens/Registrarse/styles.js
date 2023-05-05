@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     },
 
     Text:{
-        fontSize:12,
+        fontSize:17,
         color:color.colorText,
         textAlign:'center',
         fontFamily:'Secundario'
