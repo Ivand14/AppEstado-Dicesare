@@ -1,3 +1,4 @@
+import IniciarSesion from '../IniciarSesion/index';
 import { StyleSheet } from "react-native";
 import color from "../../constant/color";
 
@@ -21,6 +22,12 @@ const styles = StyleSheet.create({
         width:'100%',
     },
 
+    containerScroll:{
+        flexGrow:1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
     Titulo:{
         fontSize:22,
         margin:10,
@@ -33,7 +40,7 @@ const styles = StyleSheet.create({
     Boton:{
         textAlign:'center',
         fontSize:16,
-        fontFamily:'Secundario'
+        fontFamily:'Secundario',
     },
     
     Card:{
@@ -42,11 +49,21 @@ const styles = StyleSheet.create({
         shadowColor:color.secundary,
         shadowOffset: {width:2,height:1},
         elevation:3,
-        opacity:.76
+        opacity:.76,
+        width:'85%',
+        marginHorizontal:30,
+        height:'60%',
     },
 
     input:{
         textAlign:'center',
+        borderTopRightRadius:10,
+        borderBottomRightRadius:10,
+        borderTopLeftRadius:0,
+        borderBottomLeftRadius:0,
+        width:'70%',
+        justifyContent:'center',
+        alignItems:'center',
     },
 
     Text:{
@@ -54,6 +71,24 @@ const styles = StyleSheet.create({
         color:color.colorText,
         textAlign:'center',
         fontFamily:'Secundario'
+    },
+
+    containerIconInput:{
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
+    },
+
+    Icon:{
+        backgroundColor:color.primary,
+        padding:5,
+        borderTopLeftRadius:10,
+        borderBottomLeftRadius:10,
+    },
+
+    Login:{
+        textDecorationLine:'underline'
     }
 })
 

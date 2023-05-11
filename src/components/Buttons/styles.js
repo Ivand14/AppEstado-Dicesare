@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     },
 
     txtButton:{
-        fontFamily:'Secundario',
+        fontFamily:'Primario',
         color:color.secundaryText,
     }
     

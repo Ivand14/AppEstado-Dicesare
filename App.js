@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 
-import IniciarSesion from './src/Screens/IniciarSesion'
-import Login from './src/Screens/Login'
-import Registrarse from './src/Screens/Registrarse'
 import { StyleSheet } from 'react-native'
+import Training from './src/navigation/Training'
 import { View } from 'react-native-animatable'
 import { useFonts } from 'expo-font'
 
@@ -12,7 +10,6 @@ import { useFonts } from 'expo-font'
 
 const App = () => {
 
-    const [userValidationLogIn,setUserValidationSingIn]=useState(false)
 
     const [fonstLoaded]=useFonts({
         Primario:require('./src/assets/fonts/Primario/SignikaNegative-VariableFont_wght.ttf'),
@@ -23,22 +20,10 @@ const App = () => {
         return null;
     }
 
-    const onHandleValidationSingIn = user => {
-        setUserValidationSingIn(user)}
-
-    let contentSingIn= <Login validation={onHandleValidationSingIn}/>
-
-
-    if (userValidationLogIn) {
-        contentSingIn=<Registrarse/>
-    }
 
     
     return (
-        <View style={styles.container}>
-            {contentSingIn}
-        </View>
-        
+        <Training/>
     )
 }
 

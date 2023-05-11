@@ -47,19 +47,34 @@ const styles = StyleSheet.create({
     },
 
     buttonsGroup:{
-        flexDirection:'row',
+        flexDirection:'column',
+        margin:20,
     },
-
-    containerButtons:{
-        margin:30,
-        gap:60,
-        fontFamily:'SubTitulos'
-    },
-
-   
-
 
     
+    ButtonGoogle:{
+        color:color.primary,
+        fontSize:15,
+        fontFamily:'Secundario',
+    },
+
+    ButtonLogin:{
+        textAlign:'center',
+        fontFamily:'Secundario',
+        padding:3.5,
+        borderRadius:6,
+        fontSize:15,
+    },
+
+    TextRegistrate:{
+        color:color.colorText,
+        fontSize:17,
+        fontFamily:'Secundario',
+    },
+
+    txtButton:{
+        textDecorationLine:"underline",
+    }
 })
 
 export default styles;
