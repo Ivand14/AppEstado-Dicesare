@@ -10,7 +10,7 @@ import styles from './styles'
 
 const Registrarse = ({navigation  }) => {
 
-  const image=require('../../assets/fondoRegistrar.jpg')
+  const image=require('../../assets/image/fondoRegistrar.jpg')
   
   return (
     
@@ -46,7 +46,7 @@ const Registrarse = ({navigation  }) => {
                     <Icon name="lock" size={30} color="#fff" style={styles.Icon} />
                     <Input placeholder='Confirmar Contraeña' newStyle={styles.input} secureTextEntry={true}  />
                   </View>
-                  <Boton newStyles={styles.Boton}>
+                  <Boton newStyles={styles.Boton} onPress={()=>navigation.navigate('IniciarSesion')}>
                     REGISTRARSE
                   </Boton>
                   

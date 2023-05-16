@@ -11,13 +11,13 @@ import React from "react";
 import { TouchableWithoutFeedback } from "react-native";
 import styles from "./styles";
 
-const IniciarSesion = () => {
+const IniciarSesion = ({navigation}) => {
 
-    const imgUrl= require('../../assets/login.jpg')
+    const image= require('../../assets/image/login.jpg')
 
     
     return (
-    <ImageBackground source={imgUrl} style={styles.ImageBackground} >
+    <ImageBackground source={image} style={styles.ImageBackground} >
     
         <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()}>
             <KeyboardAvoidingView behavior="height">
@@ -32,7 +32,7 @@ const IniciarSesion = () => {
                         <Icon name="lock" size={30} color={'#fff'} style={styles.Icon}/>
                         <Input placeholder='Password' autoComplete='password' secureTextEntry={true} newStyle={styles.Input} />                                         
                     </View>
-                    <Boton newStyles={styles.BotonLogin}>INICIAR SESION</Boton>
+                    <Boton newStyles={styles.BotonLogin} onPress={()=>navigation.navigate('Home')}>INICIAR SESION</Boton>
                 </Card>
             </KeyboardAvoidingView>
         </TouchableWithoutFeedback>

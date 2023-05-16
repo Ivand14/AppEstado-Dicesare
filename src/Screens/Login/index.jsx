@@ -9,10 +9,8 @@ import styles from './styles';
 
 const Login = ({navigation}) => {
 
-
-        const imgUrl= require('../../assets/pngegg.png')
-
-        const videoUrl= require('../../assets/Studio_Project.mp4')
+        const imgUrl= require('../../assets/image/pngegg.png')
+        const videoUrl= require('../../assets/video/Studio_Project.mp4')
 
         
     return (
