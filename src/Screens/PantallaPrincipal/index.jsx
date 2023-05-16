@@ -16,10 +16,11 @@ const Home = ({navigation}) => {
 
 
   
+  
   return (
     <View style={styles.containerHome}>
       
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=>{navigation.navigate('WarmUps')}}>
         <View style={styles.containerBackground}>
           <ImageBackground  source={WarmUpsImg} style={styles.imgBackground} borderRadius={10}>
               <View style={styles.ContainerTextBackground}>

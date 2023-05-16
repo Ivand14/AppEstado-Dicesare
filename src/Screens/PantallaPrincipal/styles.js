@@ -4,7 +4,7 @@ import color from "../../constant/color";
 const styles = StyleSheet.create({
         containerHome: {
             flex: 1,
-            backgroundColor:color.primary,
+            backgroundColor:color.terciary,
             justifyContent:'center'
         },
         
