@@ -6,7 +6,9 @@ import { NavigationContainer } from '@react-navigation/native'
 import React from 'react'
 import Registrarse from '../Screens/Registrarse'
 import RmTracker from '../Screens/RmTracker'
-import WarmUps from '../Screens/WarmUps'
+import Runnign from '../Screens/Running'
+import TrainingDetails from '../Screens/TrainingDetails'
+import TrainingTypes from '../Screens/TrainingTypes'
 import color from '../constant/color'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
@@ -16,7 +18,7 @@ const Training = () => {
 
     const LogoTitle=()=>(
         <Image
-            source={require('../../src/assets/image/pngegg.png')}
+            source={require('../../src/assets/pngwing.com.png')}
             style={{width:60,height:60,margin:5}}
         />
     )
@@ -24,7 +26,7 @@ const Training = () => {
 
 
     return (
-        <NavigationContainer>
+
             <Stack.Navigator>
                 <Stack.Screen name='Login' component={Login} options={{headerShown:false}} />
                 <Stack.Screen name='IniciarSesion' component={IniciarSesion} options={{headerShown:false}}/>
@@ -40,11 +42,28 @@ const Training = () => {
                 <Stack.Screen name='RmTracker' component={RmTracker} options={{
                     headerShown:false
                 }}/>
-                <Stack.Screen name='WarmUps' component={WarmUps} options={{
+
+                <Stack.Screen name='Running' component={Runnign} options={{
                     headerShown:false
                 }}/>
+                <Stack.Screen name='TrainingTypes' component={TrainingTypes} options={{
+                    headerStyle:{
+                        backgroundColor:color.terciary,
+                    },
+                    headerTintColor:'#fff',
+                    headerTitle:(props)=> <LogoTitle {...props}/>,
+                    headerTitleAlign: 'center',
+                }}/>
+                <Stack.Screen name='TrainingDetails' component={TrainingDetails} options={{
+                        headerStyle:{
+                        backgroundColor:color.terciary,
+                    },
+                    headerTintColor:'#fff',
+                    headerTitle:(props)=> <LogoTitle {...props}/>,
+                    headerTitleAlign: 'center',
+                }}/>
             </Stack.Navigator>
-        </NavigationContainer>
+
     )
 }
 

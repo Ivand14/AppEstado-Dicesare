@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-
+import BottomTabNavigator from './src/navigation/BottomTabNavigator.jsx'
+import { NavigationContainer } from '@react-navigation/native'
 import { StyleSheet } from 'react-native'
-import Training from './src/navigation/Training'
-import { View } from 'react-native-animatable'
+import Training from './src/navigation/Training.jsx'
+import Wod from './src/navigation/Wod.jsx'
 import { useFonts } from 'expo-font'
 
 //npx expo install expo-font
@@ -23,7 +23,9 @@ const App = () => {
 
     
     return (
-        <Training/>
+        <NavigationContainer>
+            <BottomTabNavigator/>
+        </NavigationContainer>
     )
 }
 

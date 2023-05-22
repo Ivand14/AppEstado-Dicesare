@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
         width:'70%',
         color:color.primary,
         backgroundColor:color.secundary,
-        opacity:.9,
         borderRadius:10
     },
 
@@ -62,6 +61,12 @@ const styles = StyleSheet.create({
         color:color.primary,
         fontFamily:'Secundario',
         fontSize:12
+    },
+
+    gradient:{
+        ...StyleSheet.absoluteFillObject,
+        zIndex:1,
+        opacity:.4
     }
 
 

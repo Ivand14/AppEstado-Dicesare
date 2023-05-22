@@ -8,9 +8,9 @@ import {LinearGradient} from 'expo-linear-gradient'
 import React from 'react'
 import styles from './styles'
 
-const Registrarse = ({navigation  }) => {
+const Registrarse = ({navigation}) => {
 
-  const image=require('../../assets/image/fondoRegistrar.jpg')
+  const image={uri:'https://images.unsplash.com/photo-1632758206257-4756558e98fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=327&q=80'}
   
   return (
     

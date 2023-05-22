@@ -1,4 +1,3 @@
-import IniciarSesion from '../IniciarSesion/index';
 import { StyleSheet } from "react-native";
 import color from "../../constant/color";
 

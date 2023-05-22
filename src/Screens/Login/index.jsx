@@ -9,7 +9,7 @@ import styles from './styles';
 
 const Login = ({navigation}) => {
 
-        const imgUrl= require('../../assets/image/pngegg.png')
+        const imgUrl= require('../../assets/pngwing.com.png')
         const videoUrl= require('../../assets/video/Studio_Project.mp4')
 
         
