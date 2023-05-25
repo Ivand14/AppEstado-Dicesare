@@ -9,8 +9,7 @@ const styles = StyleSheet.create({
     ContainerDescriptions:{
       flex:1,
       justifyContent:'flex-start',
-      gap:20,
-      height:'100%'
+      height:500
     },
 
     Text:{
@@ -26,7 +25,8 @@ const styles = StyleSheet.create({
     },
 
     image:{
-      height:350
+      width: '100%',
+      aspectRatio: 16 / 9
     },
 
     descriptions:{

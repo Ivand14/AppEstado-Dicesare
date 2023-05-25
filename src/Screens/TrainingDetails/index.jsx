@@ -1,17 +1,25 @@
-import { Image, ImageBackground, ScrollView, Text, View } from 'react-native'
+import { ImageBackground, ScrollView, Text, View } from 'react-native'
+import { ResizeMode, Video } from 'expo-av'
 
 import Icon  from 'react-native-vector-icons/MaterialIcons'
 import styles from './styles'
+import { useRef } from 'react'
+import { useSelector } from 'react-redux'
 
-const TrainingDetails = ({route}) => {
+const TrainingDetails = () => {
 
-    const training= route.params.Exercise
+    const training= useSelector(state=>state.categoryTraining.selected)
+    const videoRef=useRef(null)
     
   return (
     <ScrollView style={styles.Container}>
-      <Image
-        source={{uri:training.image}}
+      <Video
+        ref={videoRef}
+        source={{ uri: training.video}}
         style={styles.image}
+        useNativeControls
+        resizeMode={ResizeMode.CONTAIN}
+        isLooping
       />
       <ImageBackground source={{uri:'https://images.unsplash.com/photo-1601662528567-526cd06f6582?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80'}} style={styles.ContainerDescriptions}>
         <View style={styles.descriptions}>

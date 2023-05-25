@@ -1,5 +1,18 @@
-import { StyleSheet } from "react-native/types";
+import { StyleSheet } from "react-native";
 
-export const styles=StyleSheet.create({
-    
+const styles=StyleSheet.create({
+    container:{
+        flex:6
+    },
+
+    containerCronometro:{
+        flex:1
+    },
+
+    containerImg:{
+        flex:1
+    },
+
 })
+
+export default styles

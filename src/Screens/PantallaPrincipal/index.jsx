@@ -1,19 +1,23 @@
 import { Button, FlatList, ImageBackground, Text, TouchableOpacity, View } from 'react-native'
+import { useDispatch, useSelector } from 'react-redux'
 
 import CardCategory from '../../components/Category'
-import Categories from '../../data/Cateogries'
 import React from 'react'
+import { selectedCategories } from '../../store/actions/categories.actions'
 import styles from './styles'
 
 const Home = ({ navigation }) => {
-  const onHandleSelected = (item) => {
+
+  const Categories=useSelector(state=>state.categories.category)
+  const dispatch=useDispatch()
+  
+  const onHandleSelected = item => {
+    dispatch(selectedCategories(item.id))
     if (item.isButton) {
       navigation.navigate('RmTracker')
     }else{
       navigation.navigate('TrainingTypes', {
-        id: item.id,
         Title: item.Title,
-        Categories: item.category
       });
     }
   };

@@ -1,17 +1,25 @@
 import { FlatList, View } from 'react-native'
+import React, { useEffect } from 'react'
+import { filteredCategoryTraining, selectedCategoryTraining } from '../../store/actions/categoryTraining.actions'
+import { useDispatch, useSelector } from 'react-redux'
 
-import CategoryTraining from '../../data/CategoryTraining'
 import Exercise from '../../components/Exercise'
-import React from 'react'
 import styles from './styles'
 
-const TrainingTypes = ({navigation,route}) => {
+const TrainingTypes = ({navigation}) => {
 
-  const crossfit=CategoryTraining.filter(training=>training.Category==route.params.Categories)
+  const trainingFiltered=useSelector(state=>state.categoryTraining.filteredCategoryTraining)
+  const trainingSelected=useSelector(state=>state.categories.selected)
+  const dispatch=useDispatch()
 
+  useEffect(()=>{
+    useDispatch(filteredCategoryTraining(trainingSelected.id))
+  },[])
+
+  
   const onHandleSelected=item=>{
+    dispatch(selectedCategoryTraining(item.id))
     navigation.navigate('TrainingDetails',{
-      Exercise:item,
       Title:item.Title
     })
   }
@@ -24,7 +32,7 @@ const TrainingTypes = ({navigation,route}) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={crossfit}
+        data={trainingFiltered}
         renderItem={renderItem}
         keyExtractor={item=>item.id}
       
