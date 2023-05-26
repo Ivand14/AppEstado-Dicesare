@@ -10,6 +10,7 @@ const TrainingDetails = () => {
 
     const training= useSelector(state=>state.categoryTraining.selected)
     const videoRef=useRef(null)
+    console.log(training)
     
   return (
     <ScrollView style={styles.Container}>

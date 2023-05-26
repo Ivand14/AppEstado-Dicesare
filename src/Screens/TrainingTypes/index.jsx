@@ -8,12 +8,13 @@ import styles from './styles'
 
 const TrainingTypes = ({navigation}) => {
 
-  const trainingFiltered=useSelector(state=>state.categoryTraining.filteredCategoryTraining)
+  const trainingFiltered=useSelector(state=>state.categoryTraining.categoryFilter)
   const trainingSelected=useSelector(state=>state.categories.selected)
   const dispatch=useDispatch()
 
+  
   useEffect(()=>{
-    useDispatch(filteredCategoryTraining(trainingSelected.id))
+    dispatch(filteredCategoryTraining(console.log(trainingSelected.id)))
   },[])
 
   
@@ -26,8 +27,9 @@ const TrainingTypes = ({navigation}) => {
 
   const renderItem=({item})=>(
     <Exercise item={item} onSelected={onHandleSelected}/>
-  )
+    )
 
+    console.log(trainingSelected)
   
   return (
     <View style={styles.container}>
@@ -36,7 +38,7 @@ const TrainingTypes = ({navigation}) => {
         renderItem={renderItem}
         keyExtractor={item=>item.id}
       
-      />
+        />
     </View>
   )
 }
