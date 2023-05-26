@@ -14,7 +14,7 @@ const TrainingTypes = ({navigation}) => {
 
   
   useEffect(()=>{
-    dispatch(filteredCategoryTraining(console.log(trainingSelected.id)))
+    dispatch(filteredCategoryTraining(trainingSelected.id))
   },[])
 
   
@@ -26,10 +26,11 @@ const TrainingTypes = ({navigation}) => {
   }
 
   const renderItem=({item})=>(
-    <Exercise item={item} onSelected={onHandleSelected}/>
+    <View  style={styles.container}>
+      <Exercise item={item} onSelected={onHandleSelected}/>
+    </View>
     )
 
-    console.log(trainingSelected)
   
   return (
     <View style={styles.container}>

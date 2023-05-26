@@ -5,9 +5,6 @@ import { StyleSheet } from 'react-native'
 import store from './src/store'
 import { useFonts } from 'expo-font'
 
-//npx expo install expo-font
-
-
 const App = () => {
 
 
@@ -33,8 +30,4 @@ const App = () => {
 
 export default App
 
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-    }
-})
+

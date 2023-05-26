@@ -18,11 +18,10 @@ const categoryTrainingReducer=(state=initialState,action)=>{
             }
         
         case FILTERED_CATEGORYTRAINING:
-            return{
-                ...state,categoryFilter:state.categoryTraining.filter(
-                    catFilter=>catFilter.Category === action.categoryId
-                )
-            }  
+            return{...state,
+                categoryFilter:state.categoryTraining.filter(training=>training.Category===action.categoryId
+                    )
+                }  
 
         default:
             return state
