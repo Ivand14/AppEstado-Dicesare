@@ -5,6 +5,7 @@ const CategoryTraining=[
     {
         id:1,
         Category:1,
+        Tipo:'WARMUPS',
         Title:'Movilidad y Calentamieto cardiovascular',
         Time:'6 minutos',
         Weight:'Sin peso',
@@ -21,6 +22,7 @@ const CategoryTraining=[
     {
         id:2,
         Category:1,
+        Tipo:'WARMUPS',
         Title:'Calentamiento dinámico de cuerpo completo',
         Time:'7 minutos',
         Weight:'Sin peso',
@@ -37,6 +39,7 @@ const CategoryTraining=[
     {
         id:3,
         Category:1,
+        Tipo:'WARMUPS',
         Title:'Calentamiento con énfasis en la fuerza',
         Time:'7 minutos',
         Weight:'Sin peso',
@@ -53,6 +56,7 @@ const CategoryTraining=[
     {
         id:4,
         Category:1,
+        Tipo:'WARMUPS',
         Title:'Calentamiento con énfasis en la movilidad',
         Time:'6 minutos',
         Weight:'Sin peso',
@@ -70,6 +74,7 @@ const CategoryTraining=[
     {
         id:5,
         Category:2,
+        Tipo:'WOD',
         Title:'Wod Fran',
         Description:'EMOM',
         Time:'10 Minutes',
@@ -84,6 +89,7 @@ const CategoryTraining=[
     {
         id:6,
         Category:2,
+        Tipo:'WOD',
         Title:'Wod Cindy',
         Description:'AMRAP',
         Time:'15 minutes',
@@ -98,6 +104,7 @@ const CategoryTraining=[
     {
         id:7,
         Category:2,
+        Tipo:'WOD',
         Title:'Wod Grace',
         Description:'For Time',
         Time:'3-7 minutes',
@@ -110,6 +117,7 @@ const CategoryTraining=[
     {
         id:8,
         Category:2,
+        Tipo:'WOD',
         Title:'Wod Annie',
         Description:'For Time: 50-40-30-20-10 repeticiones',
         Time:'8-15 minutes',
@@ -123,6 +131,7 @@ const CategoryTraining=[
     {
         id:9,
         Category:3,
+        Tipo:'WEIGHTLIFTING',
         Title:'Front Squat',
         Description:' La Front Squat es una variación de la sentadilla en la que la barra se sostiene en la parte frontal de los hombros en lugar de la espalda. Esto pone más énfasis en los músculos de las piernas y el core.',
         Weight:'80Kg',
@@ -134,6 +143,7 @@ const CategoryTraining=[
     {
         id:10,
         Category:3,
+        Tipo:'WEIGHTLIFTING',
         Title:'Clean and Jerk',
         Description:' El Clean and Jerk es un ejercicio compuesto que involucra levantar una barra desde el suelo hasta los hombros (Clean) y luego impulsarla sobre la cabeza (Jerk) para completar la repetición.',
         Weight:'70Kg',
@@ -146,6 +156,7 @@ const CategoryTraining=[
         id:11,
         Category:3,
         Title:'Snatch',
+        Tipo:'WEIGHTLIFTING',
         Description:'El Snatch es un movimiento explosivo donde se levanta la barra desde el suelo directamente por encima de la cabeza en un solo movimiento fluido.',
         Weight:'60Kg',
         Time:'3 cada 2 minutos',
@@ -156,6 +167,7 @@ const CategoryTraining=[
     {
         id:12,
         Category:3,
+        Tipo:'WEIGHTLIFTING',
         Title:'Deadlift',
         Description:'El Deadlift es un ejercicio de levantamiento de peso en el que se levanta una barra cargada desde el suelo hasta la posición vertical, manteniendo la espalda recta y usando principalmente los músculos de las piernas y la espalda.',
         Weight:'120Kg',

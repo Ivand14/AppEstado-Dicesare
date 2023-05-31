@@ -32,6 +32,15 @@ const styles = StyleSheet.create({
     descriptions:{
       padding:20,
       gap:15
+    },
+
+    TextBoton:{
+      fontFamily:'Secundario',
+      fontSize:15,
+    },
+
+    button:{
+      textAlign:'center'
     }
 
 

@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 
 import  Icon  from 'react-native-vector-icons/MaterialIcons'
 import React from 'react'
+import Reservation from './Reservation'
 import Training from './Training'
 import Wod from './Wod'
 import color from '../constant/color'
@@ -28,6 +29,14 @@ const BottomTabNavigator = () => {
             tabBarIcon:()=>(
                 <View>
                     <Icon name='assignment' size={30}/>
+                </View>
+            )
+        }}/>
+
+        <TabNavigator.Screen name='Reservation' component={Reservation}  options={{
+            tabBarIcon:()=>(
+                <View>
+                    <Icon name='add-circle' size={30}/>
                 </View>
             )
         }}/>

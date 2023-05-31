@@ -1,28 +1,23 @@
-import { ImageBackground, ScrollView, Text, View } from 'react-native'
-import { ResizeMode, Video } from 'expo-av'
+import { Button, Text, View } from 'react-native'
+import { useDispatch, useSelector } from 'react-redux'
 
+import Boton from '../../components/Buttons'
 import Icon  from 'react-native-vector-icons/MaterialIcons'
+import { addWod } from '../../store/actions/createWodAction.actions'
 import styles from './styles'
-import { useRef } from 'react'
-import { useSelector } from 'react-redux'
 
 const TrainingDetails = () => {
 
+    const dispatch=useDispatch()
     const training= useSelector(state=>state.categoryTraining.selected)
-    const videoRef=useRef(null)
-    console.log(training)
+    
+    const onHandleAdd=()=>{
+      dispatch(addWod(training))
+    }
     
   return (
-    <ScrollView style={styles.Container}>
-      <Video
-        ref={videoRef}
-        source={{ uri: training.video}}
-        style={styles.image}
-        useNativeControls
-        resizeMode={ResizeMode.CONTAIN}
-        isLooping
-      />
-      <ImageBackground source={{uri:'https://images.unsplash.com/photo-1601662528567-526cd06f6582?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=415&q=80'}} style={styles.ContainerDescriptions}>
+    
+      <View  style={styles.ContainerDescriptions}>
         <View style={styles.descriptions}>
             <Text style={styles.Text}>{training.Description}</Text>
             <View style={styles.iconText}>
@@ -44,9 +39,11 @@ const TrainingDetails = () => {
             <Text style={styles.Text}>{training.Ejercicio3}</Text>
             <Text style={styles.Text}>{training.Ejercicio4}</Text>
             <Text style={styles.Text}>{training.Ejercicio5}</Text>
+            <Boton newStyles={styles.button} onPress={onHandleAdd} >
+              <Text style={styles.TextBoton}>ADD WOD</Text>
+            </Boton>
         </View>
-      </ImageBackground>
-    </ScrollView>
+      </View>
   )
 }
 

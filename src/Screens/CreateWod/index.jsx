@@ -1,21 +1,26 @@
 import { FlatList, ImageBackground } from 'react-native'
+import { useDispatch, useSelector } from 'react-redux'
 
-import React from 'react'
-import { createWod } from '../../data/createWod'
-import WodList from '../../components/WodList'
-import {LinearGradient} from 'expo-linear-gradient'
 import Cronometro from '../../components/Cronometro'
+import React from 'react'
 import { View } from 'react-native-animatable'
+import WodList from '../../components/WodList'
+import { deleteWod } from '../../store/actions/createWodAction.actions'
 import styles from './styles'
 
-
-
 const CreateWod = () => {
+  const dispatch=useDispatch()
+  const items=useSelector(state=>state.CreateWod.itemSelected)
 
+  console.log(items)
 
+  const onHandleDelete=id=>{
+    console.log(id)
+    dispatch(deleteWod(id))
+  }
 
   const renderWod=({item})=>(
-    <WodList item={item}/>
+    <WodList item={item} onDelete={onHandleDelete}/>
   )
   
 
@@ -30,7 +35,7 @@ const CreateWod = () => {
 
       <View style={styles.container}>
         <FlatList
-          data={createWod}
+          data={items}
           renderItem={renderWod}
           keyExtractor={item=>item.id}
           
