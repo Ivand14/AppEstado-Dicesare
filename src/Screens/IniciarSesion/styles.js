@@ -43,8 +43,19 @@ const styles = StyleSheet.create({
         padding:5,
         borderBottomLeftRadius:10,
         borderTopLeftRadius:8,
-    }
+    },
+    
+    Titulo:{
+        fontSize:25,
+        margin:10,
+        textAlign:'center',
+        color:color.secundaryText,
+        fontFamily:'Secundario',
+    },
 
+    Gradient:{
+        flex:1,
+    }
 
     
 })

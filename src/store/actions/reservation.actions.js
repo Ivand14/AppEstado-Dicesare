@@ -28,6 +28,18 @@ export const addReservation=(user)=>{
 }
 
 export const cancelReservation=(userId)=>{
-    type:CANCEL_RESERVATION
-    userId
+    return async dispatch=>{
+        try {
+            const response = await fetch(`{Url_Api}/Reservation/${userId}.json`,{
+            method:"DELETE",
+            })
+            const data=await response.json()
+            dispatch({
+                type:CANCEL_RESERVATION,
+                userId
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }

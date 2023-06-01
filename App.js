@@ -1,7 +1,5 @@
-import BottomTabNavigator from './src/navigation/BottomTabNavigator.jsx'
-import { NavigationContainer } from '@react-navigation/native'
+import MainNavigation from "./src/navigation/index"
 import { Provider } from 'react-redux'
-import { StyleSheet } from 'react-native'
 import store from './src/store'
 import { useFonts } from 'expo-font'
 
@@ -21,9 +19,7 @@ const App = () => {
     
     return (
         <Provider store={store}>
-            <NavigationContainer>
-                <BottomTabNavigator/>
-            </NavigationContainer>      
+            <MainNavigation/>
         </Provider>
     )
 }

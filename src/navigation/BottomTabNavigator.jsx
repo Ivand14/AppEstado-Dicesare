@@ -21,7 +21,7 @@ const BottomTabNavigator = () => {
         <TabNavigator.Screen name='Training' component={Training} options={{
             tabBarIcon:()=>(
                 <View>
-                    <Icon name='fitness-center' size={30}/>
+                    <Icon name='home' size={30}/>
                 </View>
             )
         }}/>

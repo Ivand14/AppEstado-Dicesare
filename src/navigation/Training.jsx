@@ -28,9 +28,6 @@ const Training = () => {
     return (
 
             <Stack.Navigator>
-                <Stack.Screen name='Login' component={Login} options={{headerShown:false}} />
-                <Stack.Screen name='IniciarSesion' component={IniciarSesion} options={{headerShown:false}}/>
-                <Stack.Screen name='Registrarse' component={Registrarse} options={{headerShown:false}}/>
                 <Stack.Screen name='Home' component={Home} options={{
                     headerStyle:{
                         backgroundColor:color.terciary,

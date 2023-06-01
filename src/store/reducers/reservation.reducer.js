@@ -5,12 +5,15 @@ const initialState={
 }
 
 const ReservationReducer=(state=initialState,action)=>{
-    switch(type.action){
+    switch(action.type){
         case ADD_RESERVATION:
-            return{state}
+            return{...state,UserName:[...state.UserName,action.UserName]}
 
         case CANCEL_RESERVATION:
-            const deleteUser= [...state.UserName].filter(user=>user.id !== action.userId)
-            return {...state,UserName:deleteUser}
+            return{...state,UserName:[...state.UserName.filter(user=>user.id !== action.userId)]}
+        default:
+            return state
     }
 }
+
+export default ReservationReducer

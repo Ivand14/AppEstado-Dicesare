@@ -54,16 +54,7 @@ const styles = StyleSheet.create({
         height:'60%',
     },
 
-    input:{
-        textAlign:'center',
-        borderTopRightRadius:10,
-        borderBottomRightRadius:10,
-        borderTopLeftRadius:0,
-        borderBottomLeftRadius:0,
-        width:'70%',
-        justifyContent:'center',
-        alignItems:'center',
-    },
+    
 
     Text:{
         fontSize:17,
@@ -81,9 +72,11 @@ const styles = StyleSheet.create({
 
     Icon:{
         backgroundColor:color.primary,
-        padding:5,
+        padding:10,
         borderTopLeftRadius:10,
         borderBottomLeftRadius:10,
+        alignContent:'flex-end',
+        marginTop:19,
     },
 
     Login:{

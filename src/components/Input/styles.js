@@ -3,14 +3,32 @@ import color from "../../constant/color";
 
 const styles = StyleSheet.create({
     
-    Input:{
-        backgroundColor:'#CCD5AE',
+    formControl:{
+        flex:1,
         justifyContent:'center',
-        borderRadius:20,
-        height:40,
-        color:color.primary,
-        textAlign:'center',
-        marginVertical:10
+        alignContent:'center',
+    },
+
+    label:{
+        fontFamily:'Secundario',
+        alignItems:'center',
+    },
+
+    Input:{
+        paddingHorizontal:2,
+        paddingVertical:5,
+        borderColor:color.secundary,
+        borderWidth:2,
+        alignItems:'center',
+        borderTopRightRadius:10,
+        borderBottomRightRadius:10,
+        height:50,
+        color:color.colorText,
+        textAlign:'center'
+    },
+
+    error:{
+        color:'red'
     }
 
     
