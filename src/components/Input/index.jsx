@@ -17,7 +17,7 @@ const InputReducer = (state, action) => {
   }
 }
 
-function Input(props) {
+const InputForm=(props) => {
   const [inputState, dispatch] = useReducer(InputReducer, {
     value: props.initialValue ? props.initialValue : '',
     isValid: props.initialValid,
@@ -28,9 +28,9 @@ function Input(props) {
 
   useEffect(() => {
     if (inputState.touched) {
-      onInputChange(inputState.value, inputState.isValid)
+      onInputChange(id,inputState.value, inputState.isValid)
     }
-  }, [inputState, onInputChange])
+  }, [id,inputState, onInputChange])
 
   const textChangeHandler = text => {
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -44,18 +44,22 @@ function Input(props) {
       isValid = false
     }
   
-    if (props.min !== null && +text < props.min) {
+    if (props.min != null && +text < props.min) {
       isValid = false
     }
   
-    if (props.max !== null && +text > props.max) {
+    if (props.max != null && +text > props.max) {
       isValid = false
     }
   
-    if (props.minLength !== null && text.length < props.minLength) {
+    if (props.minLength != null && text.length < props.minLength) {
       isValid = false
     }
-  
+    
+    if (props.id === 'password' && text.trim().length === 0) {
+      isValid = false
+    }
+    
     dispatch({
       type: INPUT_CHANGE,
       value: text,
@@ -84,4 +88,4 @@ function Input(props) {
   )
 }
 
-export default Input;
+export default InputForm;

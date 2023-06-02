@@ -5,7 +5,7 @@ import Icon  from 'react-native-vector-icons/MaterialIcons';
 import color from '../../constant/color';
 import styles from './styles'
 
-const Reservas = ({item,onConfirm}) => {
+const Reservas = ({item,onConfirm,onReserv}) => {
 
     const currentDay=item.Date
     const option={weekday:'long',day:'numeric'}

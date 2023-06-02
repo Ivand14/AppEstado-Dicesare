@@ -4,7 +4,7 @@ import React, { useCallback, useReducer } from 'react'
 import Boton from '../../components/Buttons'
 import Card from '../../components/Card'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Input from '../../components/Input'
+import InputForm from '../../components/Input';
 import {LinearGradient} from 'expo-linear-gradient'
 import { signup } from '../../store/actions/auth.actions';
 import styles from './styles'
@@ -13,34 +13,34 @@ import { useDispatch } from 'react-redux';
 const FORM_INPUT_UPDATE='FORM_INPUT_UPDATE'
 
 
-export const formReducer=(state,action)=>{
-  if(action.type===FORM_INPUT_UPDATE){
-
-    const inputValues={
+export const formReducer = (state, action) => {
+  if (action.type === FORM_INPUT_UPDATE) {
+    const inputValues = {
       ...state.inputValues,
-      [action.input]:action.value,
-    }
+      [action.input]: action.value,
+    };
 
-    const inputValidities={
+    const inputValidities = {
       ...state.inputValidities,
-      [action.input]:action.isValid,
+      [action.input]: action.isValid,
+    };
+
+    let formIsValid = true;
+
+    for (const key in inputValidities) {
+      formIsValid = formIsValid && inputValidities[key];
     }
 
-    let formIsValid=true;
-    
-    for(const key in inputValidities){
-      formIsValid = formIsValid && inputValidities[key]
-    }
-
-    return{
+    return {
       formIsValid,
       inputValues,
-      inputValidities
-    }
+      inputValidities,
+    };
   }
 
-  return state
+  return state;
 };
+
 
 const Registrarse = ({navigation}) => {
   const dispatch=useDispatch()
@@ -48,11 +48,13 @@ const Registrarse = ({navigation}) => {
     inputValues:{
       email:'',
       password:'',
+      userName:''
     },
 
     inputValidities:{
       email:false,
       password:false,
+      userName:''
     },
 
     formIsValid:false,
@@ -62,17 +64,18 @@ const Registrarse = ({navigation}) => {
   const onHandleSignUp=()=>{
     console.log(formState)
     if (formState.formIsValid) {
-      dispatch(signup(formState.inputValues.email, formState.inputValues.password))
+      dispatch(signup(formState.inputValues.email, formState.inputValues.password,formState.inputValues.userName));
     }else{
       Alert.alert(
         'FORMULARIO INVALIDO',
-        'INGRESA UN USUARIO Y CONTRASEÑA VALIDO',
+        'INGRESA UN CORREO VALIDO Y LA CONTRASEÑA DEBE TENER MAS DE 6 CARACTERES',
         [{Text:'OK'}]
       )
     }
   }
 
-  const onInputChange = useCallback((inputIdentifier, inputValue, inputValidity) => {
+  const onInputChangeHandler = useCallback((inputIdentifier, inputValue, inputValidity) => {
+    console.log(inputIdentifier, inputValue, inputValidity)
     formDispatch({
       type: FORM_INPUT_UPDATE,
       input: inputIdentifier,
@@ -99,19 +102,22 @@ const Registrarse = ({navigation}) => {
               <Text style={styles.Titulo}>REGISTRATE Y CONTINUA CON TU PLAN DE ENTRENAMIENTO</Text>
               
               <Card otherStyles={styles.Card}>
-
+                  <View style={styles.containerIconInput} >
+                    <Icon name="user" size={30} color="#fff" style={styles.Icon} />
+                    <InputForm placeholder='Nombre' onInputChange={onInputChangeHandler} id='userName' />
+                  </View>
 
                   <View style={styles.containerIconInput} >
                     <Icon name="envelope-o" size={30} color="#fff" style={styles.Icon} />
-                    <Input placeholder='Email' onInputChange={onInputChange} id='email'  autoCapitalize='none'   />
+                    <InputForm placeholder='Email' onInputChange={onInputChangeHandler} id='email'  autoCapitalize='none'   />
                   </View>
 
                   <View style={styles.containerIconInput} >
                     <Icon name="lock" size={30} color="#fff" style={styles.Icon} />
-                    <Input placeholder='Contraseña' onInputChange={onInputChange} id='password'  secureTextEntry={true}  />
+                    <InputForm placeholder='Contraseña' onInputChange={onInputChangeHandler} id='password'  secureTextEntry={true}  />
                   </View>
 
-                  <Boton newStyles={styles.Boton} onPress={onHandleSignUp}>
+                  <Boton newStyles={styles.Boton} onPress={()=>onHandleSignUp()}>
                     REGISTRARSE
                   </Boton>
                   

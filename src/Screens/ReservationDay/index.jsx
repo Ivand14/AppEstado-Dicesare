@@ -15,8 +15,7 @@ const ReservationDay = () => {
 
   const confirmUser=()=>{
     dispatch(UserName)
-}
-  
+  }
 
   const renderReseva=({item})=>(
     <View>

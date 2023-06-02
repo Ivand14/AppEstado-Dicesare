@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
 
     containerTextVideo:{
         position:'absolute',
-        top: 5,
+        top: 10,
         left: 0,
         right: 0,
-        bottom: 100,
+        bottom: 30,
         justifyContent: 'flex-end',
         alignItems: 'center',
         zIndex:2
@@ -48,22 +48,14 @@ const styles = StyleSheet.create({
 
     buttonsGroup:{
         flexDirection:'column',
-        margin:20,
-    },
-
-    
-    ButtonGoogle:{
-        color:color.primary,
-        fontSize:15,
-        fontFamily:'Secundario',
     },
 
     ButtonLogin:{
         textAlign:'center',
         fontFamily:'Secundario',
-        padding:3.5,
+        padding:5,
         borderRadius:6,
-        fontSize:15,
+        fontSize:18,
     },
 
     TextRegistrate:{

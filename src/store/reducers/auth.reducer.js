@@ -1,8 +1,9 @@
-import { SIGNUP } from "../actions/auth.actions";
+import { SIGNUP, SINGIN } from "../actions/auth.actions";
 
 const initialState={
     token:null,
-    userId:null
+    userId:null,
+    payload:null
 }
 
 const AuthReducer = (state = initialState,action) =>{
@@ -11,7 +12,8 @@ const AuthReducer = (state = initialState,action) =>{
             return {...state,
                 token:action.token,
                 userId:action.userId}
-
+        case SINGIN:
+            return{...state,payload:action.payload}
         default:
             return state
     }

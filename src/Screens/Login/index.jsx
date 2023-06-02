@@ -35,9 +35,9 @@ const Login = ({navigation}) => {
                 <Text style={styles.subTextVideo}>Planea tu entrenamiento al instante en la App</Text> 
 
                 <View style={styles.buttonsGroup}>
-                    <Icon.Button name="google" backgroundColor="#F7FD04" color="black" Style={styles.ButtonGoogle} >
+                    {/* <Icon.Button name="google" backgroundColor="#F7FD04" color="black" Style={styles.ButtonGoogle} >
                         INICIAR SESION CON GOOGLE
-                    </Icon.Button>      
+                    </Icon.Button>       */}
                     <View>
                         <Boton newStyles={styles.ButtonLogin} onPress={() => navigation.navigate('IniciarSesion')}>
                             INICIAR SESION
